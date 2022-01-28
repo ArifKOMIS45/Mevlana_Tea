@@ -65,6 +65,13 @@ public class CheckOut extends Parent {
     @FindBy(name = "apply_coupon")
     private WebElement applyCoupon;
 
+    public WebElement getiFrame() {
+        return iFrame;
+    }
+
+    @FindBy(css = "div#ppplus>iframe")
+    private WebElement iFrame;
+
     public WebElement getFirstName() {
         return firstName;
     }

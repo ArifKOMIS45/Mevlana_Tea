@@ -107,7 +107,7 @@ public class Parent {
         executor.executeScript("arguments[0].click();", element);
     }
 
-    public static void urlgit(String language) {
+    public static void navigateToUrl(String language) {
         driver = Drivers.getDriver();
         switch (language) {
             case "TR":

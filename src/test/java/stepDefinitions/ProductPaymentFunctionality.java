@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.java.en.*;
@@ -21,8 +22,9 @@ public class ProductPaymentFunctionality {
 
     @When("^Click on the PayPal button$")
     public void clickOnThePayPalButton() {
-        wait.until(ExpectedConditions.visibilityOf(product.getiFrame()));
-        Drivers.getDriver().switchTo().frame(product.getiFrame());
+//        wait.until(ExpectedConditions.visibilityOf(product.getiFrame()));
+//        Drivers.getDriver().switchTo().frame(product.getiFrame());
+       wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(product.getiFrame()));
         product.clickElement(product.getPayPall());
     }
 
@@ -35,6 +37,7 @@ public class ProductPaymentFunctionality {
 
     @Then("^Click on the Weiter zur Kasse button$")
     public void clickOnTheWeiterZurKasseButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(cart.getCheckOutBtn()));
         cart.clickElement(cart.getCheckOutBtn());
     }
 
@@ -43,26 +46,6 @@ public class ProductPaymentFunctionality {
         checkOut.sendKeys(checkOut.getFirstName(), name);
     }
 
-    @When("^Select \"([^\"]*)\" as payment \"([^\"]*)\"$")
-    public void selectAsPayment(Boolean payment, String option) {
-        if (payment) {
-            if (!checkOut.getCreditCardRadio().isSelected()) checkOut.clickElement(checkOut.getCreditCardRadio());
-            Drivers.getDriver().switchTo().frame(0);
-            switch (option) {
-                case "Paypal":
-                    if (!checkOut.getPaymentMethods().get(0).isSelected())
-                        checkOut.javaScriptClick(checkOut.getPaymentMethods().get(0));
-                    break;
-                case "Lastschrift":
-                    checkOut.javaScriptClick(checkOut.getPaymentMethods().get(1));
-                    break;
-                case "Kreditkarte":
-                    checkOut.javaScriptClick(checkOut.getPaymentMethods().get(2));
-                    break;
-            }
-            Drivers.getDriver().switchTo().defaultContent();
-        }
-    }
 
     @And("^Fill the nachname \"([^\"]*)\"$")
     public void fillTheNachname(String nachname) {
@@ -94,14 +77,9 @@ public class ProductPaymentFunctionality {
         checkOut.sendKeys(checkOut.getEmail(), email);
     }
 
-    @When("^Select \"([^\"]*)\" as payment option$")
-    public void selectAsPaymentOption(Boolean msj) {
-        if (msj) {
-            checkOut.clickElement(checkOut.getBankTransferRadio());
-        }
-    }
 
-    @And("^Select the \"([^\"]*)\"$")
+
+    @And("^Select the ([^\"]*)$")
     public void selectThe(Boolean term) {
         wait.until(ExpectedConditions.elementToBeClickable(checkOut.getTermsAndConditions()));
         if (term) checkOut.clickElement(checkOut.getTermsAndConditions());
@@ -137,5 +115,37 @@ public class ProductPaymentFunctionality {
     @Then("^The user should be able to see Der Gutschein  message$")
     public void the_user_should_be_able_to_see_Der_Gutschein_message() {
         checkOut.assertMessage(checkOut.getCouponErrorMessage(), "existiert nicht");
+    }
+
+    @When("^Select ([^\"]*) as payment option$")
+    public void selectAsPaymentOption(Boolean msj) {
+        if (msj) {
+            checkOut.clickElement(checkOut.getBankTransferRadio());
+        }
+    }
+
+    @When ("^Select ([^\"]*) as payment \"([^\"]*)\"$")
+        public void selectAsPayment(Boolean payment, String option) {
+        if (payment) {
+            checkOut.waitUntilVisible(checkOut.getiFrame());
+            if (!checkOut.getCreditCardRadio().isSelected()) {
+                checkOut.clickElement(checkOut.getCreditCardRadio());
+            }
+            Drivers.getDriver().switchTo().frame(product.getiFrame());
+            wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.cssSelector("[class= 'nameRow']"), 1));
+            switch (option) {
+                case "Paypal":
+                    if (!checkOut.getPaymentMethods().get(0).isSelected())
+                        checkOut.javaScriptClick(checkOut.getPaymentMethods().get(0));
+                    break;
+                case "Lastschrift":
+                    checkOut.javaScriptClick(checkOut.getPaymentMethods().get(1));
+                    break;
+                case "Kreditkarte":
+                    checkOut.javaScriptClick(checkOut.getPaymentMethods().get(2));
+                    break;
+            }
+            Drivers.getDriver().switchTo().defaultContent();
+        }
     }
 }

@@ -25,9 +25,9 @@ Feature: Product Payment Functionality
     And Fill the Ort "<Ort>"
     And Fill the telefon  "<Telefon>"
     And Fill the email "<Email>"
-    When Select "<Transfer>" as payment option
-    When Select "<Payment with>" as payment "<Option>"
-    And Select the "<Terms and conditions>"
+    When Select <Transfer> as payment option
+    When Select <Payment with> as payment "<Option>"
+    And Select the <Terms and conditions>
     When Click on the "<the Kostenpflichtig Bestellen>"
     Then The user shoul be able to see the appropriate "<Message>"
 

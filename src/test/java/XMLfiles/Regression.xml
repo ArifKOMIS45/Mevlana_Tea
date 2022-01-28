@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite">
+    <test name="Regressionin DE">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="language" value="DE"></parameter>
+        <classes>
+            <class name="runners.RegressionRunner"></class>
+        </classes>
+    </test>
+
+    <test name="Regression in TR">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="language" value="TR"></parameter>
+        <classes>
+            <class name="runners.RegressionRunner"></class>
+        </classes>
+    </test>
+
+    <test name="Regression in EN">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="language" value="EN"></parameter>
+        <classes>
+            <class name="runners.RegressionRunner"></class>
+        </classes>
+    </test>
+</suite>

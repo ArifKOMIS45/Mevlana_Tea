@@ -3,6 +3,7 @@ package utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Drivers {
@@ -20,7 +21,12 @@ public class Drivers {
             switch (threadBrowserName.get()) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    threadDriver.set(new ChromeDriver());
+                    ChromeOptions options=new ChromeOptions();
+                    options.setExperimentalOption("excludeSwitches", new String[] {"enable-automation"});
+
+                    options.addArguments("force-device-scale-factor=0.75");
+                    options.addArguments("high-dpi-support=0.75");
+                    threadDriver.set(new ChromeDriver(options));
                     threadDriver.get().manage().window().maximize();
                     break;
                 case "firefox":
