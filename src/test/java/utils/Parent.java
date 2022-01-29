@@ -121,8 +121,8 @@ public class Parent {
                 break;
         }
         Home hm = new Home();
-        hm.waitUntilVisible(hm.getHome_cookise_accept());
-        hm.clickElement(hm.getHome_cookise_accept());
+        hm.waitUntilVisible(hm.getHomeCookiseAccept());
+        hm.clickElement(hm.getHomeCookiseAccept());
     }
 
     public void switchToNewTab() {

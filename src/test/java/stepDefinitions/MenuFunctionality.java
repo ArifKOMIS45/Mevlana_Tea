@@ -21,7 +21,7 @@ public class MenuFunctionality {
 
     @Given("^Click on the Produkte button$")
     public void click_on_the_Produkte_button() {
-        hm.clickElement(hm.getHome_page_Product());
+        hm.clickElement(hm.getHomePageProduct());
     }
 
     @Then("^User should able to see the Produkt Page$")
@@ -30,14 +30,14 @@ public class MenuFunctionality {
             hm.assertUrl("produkte");
         } else {
             hm.assertUrl("shop");
-            wait.until(ExpectedConditions.visibilityOf(hm.getHome_page_Product()));
-            hm.javaScriptClick(hm.getHome_cookise_accept());
+            wait.until(ExpectedConditions.visibilityOf(hm.getHomePageProduct()));
+            hm.javaScriptClick(hm.getHomeCookiseAccept());
         }
     }
 
     @Then("^Click on the Home button$")
     public void click_on_the_Home_button() {
-        hm.clickElement(hm.getHome_page_Home());
+        hm.clickElement(hm.getHomePageHome());
     }
 
     @Then("^The user should able to see the Home Page$")
@@ -48,27 +48,27 @@ public class MenuFunctionality {
             if (Drivers.getDriver().manage().window().getSize().getHeight() == 640) {
                 hm.javaScriptClick(hm.getHamburger());
                 hm.javaScriptClick(hm.getToggleFlags());
-                hm.clickElement(hm.getTc_flage());
+                hm.clickElement(hm.getTcFlage());
             } else {
                 actions.moveToElement(hm.getAllFlags()).build().perform();
-                hm.clickElement(hm.getTc_flage());
+                hm.clickElement(hm.getTcFlage());
             }
 
         } else if (Drivers.threadLanguage.get().equals("EN")) {
             if (Drivers.getDriver().manage().window().getSize().getHeight() == 640) {
                 hm.javaScriptClick(hm.getHamburger());
                 hm.clickElement(hm.getToggleFlags());
-                hm.clickElement(hm.getEn_flage());
+                hm.clickElement(hm.getEnFlage());
             } else {
                 actions.moveToElement(hm.getAllFlags()).build().perform();
-                hm.clickElement(hm.getEn_flage());
+                hm.clickElement(hm.getEnFlage());
             }
         }
     }
 
     @Then("^Click on the Uber Uns button$")
     public void click_on_the_Uber_Uns_button() {
-        hm.clickElement(hm.getHome_page_About_Us());
+        hm.clickElement(hm.getHomePageAboutUs());
     }
 
     @Then("^User should be able to see the Uber Uns Page$")
@@ -78,7 +78,7 @@ public class MenuFunctionality {
 
     @Then("^Click on the Blog button$")
     public void click_on_the_Blog_button() {
-        hm.clickElement(hm.getHome_page_Blog());
+        hm.clickElement(hm.getHomePageBlog());
     }
 
     @Then("^The user should be able to see the Blog Page$")
@@ -88,7 +88,7 @@ public class MenuFunctionality {
 
     @Then("^Click on the Kontakt button$")
     public void click_on_the_Kontakt_button() {
-        hm.clickElement(hm.getHome_page_Contact());
+        hm.clickElement(hm.getHomePageContact());
     }
 
     @Then("^The user should be able to see the Kontakt Page$")
@@ -101,7 +101,7 @@ public class MenuFunctionality {
         if (Drivers.threadLanguage.get().equals("DE") && Drivers.getDriver().manage().window().getSize().getHeight() == 640) {
             hm.clickElement(hm.getMobilCart());
         } else if (Drivers.threadLanguage.get().equals("DE")) {
-            hm.clickElement(hm.getHome_top_Cart());
+            hm.clickElement(hm.getHomeTopCart());
         }
     }
 
@@ -122,6 +122,6 @@ public class MenuFunctionality {
             Drivers.getDriver().manage().window().setSize(new Dimension(360, 640));
         }
         hm.javaScriptClick(hm.getHamburger());
-        wait.until(ExpectedConditions.visibilityOf(hm.getHome_page_Product()));
+        wait.until(ExpectedConditions.visibilityOf(hm.getHomePageProduct()));
     }
 }

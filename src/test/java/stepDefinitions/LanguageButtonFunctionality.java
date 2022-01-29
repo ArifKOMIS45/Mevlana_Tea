@@ -22,11 +22,11 @@ public class LanguageButtonFunctionality {
     @And("^Select  \"([^\"]*)\" from the options$")
     public void selectFromTheOptions(String language) {
         if (language.equals("DE")) {
-            hm.clickElement(hm.getDe_flage());
+            hm.clickElement(hm.getDeFlage());
         } else if (language.equals("TR")) {
-            hm.clickElement(hm.getTc_flage());
+            hm.clickElement(hm.getTcFlage());
         } else {
-            hm.clickElement(hm.getEn_flage());
+            hm.clickElement(hm.getEnFlage());
         }
     }
 

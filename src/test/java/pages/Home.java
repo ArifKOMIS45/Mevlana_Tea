@@ -14,61 +14,61 @@ public class Home extends Parent {
     }
 
     @FindBy(id = "mailchimp-top-bar__email")
-    private WebElement Home_e_mail_input;
+    private WebElement HomeEmailInput;
 
     @FindBy(css = "label[class='mctb-response-label']")
-    private WebElement Home_e_mail_bar_menu_message;
+    private WebElement HomeEMailBarMenuMessage;
 
     @FindBy(className = "mctb-button")
-    private WebElement Home_e_mail_submit;
+    private WebElement HomeEmailSubmit;
 
-    @FindBy(css = "div[class='cf1YU1 cfNq4w']>button")
-    private WebElement Home_cookise_accept;
+    @FindBy(xpath = "//span[.='Accept all']")
+    private WebElement HomeCookiseAccept;
 
     @FindBy(css = "ul[id='menu-ana-menu']>:nth-child(1)")
-    private WebElement Home_page_Home;
+    private WebElement HomePageHome;
 
     @FindBy(xpath = "(//ul[@id='menu-ana-menu']//li)[2]")
-    private WebElement Home_page_Product;
+    private WebElement HomePageProduct;
 
     @FindBy(css = "ul[id='menu-ana-menu']>:nth-child(3)")
-    private WebElement Home_page_About_Us;
+    private WebElement HomePageAboutUs;
 
     @FindBy(xpath = "//span[text()='BLOG']")
-    private WebElement Home_page_Blog;
+    private WebElement HomePageBlog;
 
     @FindBy(css = "ul[id='menu-ana-menu']>:nth-child(5)")
-    private WebElement Home_page_Contact;
+    private WebElement HomePageContact;
 
     @FindBy(className = "mctb-response-label")
-    private WebElement Home_mail_submit_answer;
+    private WebElement HomeMailSubmitAnswer;
 
     @FindBy(xpath = "//a[text()='Facebook']")
-    private WebElement Home_Facebook;
+    private WebElement HomeFacebook;
 
     @FindBy(xpath = "//a[text()=' Instagram']")
-    private WebElement Home_Instagram;
+    private WebElement HomeInstagram;
 
     @FindBy(xpath = "//a[text()=' Twitter']")
-    private WebElement Home_Twitter;
+    private WebElement HomeTwitter;
 
     @FindBy(css = "div#sbi_load>span>a")
-    private WebElement Home_Instagram_Bottom_Button;
+    private WebElement HomeInstagramBottomButton;
 
     @FindBy(className = "icon-bag-fine")
-    private WebElement Home_top_Cart;
+    private WebElement HomeTopCart;
 
     @FindBy(css = "ul[id='menu-ana-menu']>:nth-child(6)")
     private WebElement allFlags;
 
     @FindBy(id = "menu-item-22453")
-    private WebElement tc_flage;
+    private WebElement TcFlage;
 
     @FindBy(id = "menu-item-22455")
-    private WebElement en_flage;
+    private WebElement EnFlage;
 
     @FindBy(id = "menu-item-22454")
-    private WebElement de_flage;
+    private WebElement DeFlage;
 
     @FindBy(className = "mctb-close")
     private WebElement closeEMail;
@@ -86,7 +86,7 @@ public class Home extends Parent {
     private WebElement eMailMessage;
 
     @FindBy(css = "li[id='menu-item-21588']>ul.sub-menu[style='display: block;']")
-    private WebElement about_Us_Submenu;
+    private WebElement aboutUsSubmenu;
 
     @FindBy(css = "li[id='menu-item-22796']>ul.sub-menu[style='display: block;']")
     private WebElement productSubMenu;
@@ -95,16 +95,16 @@ public class Home extends Parent {
     private List<WebElement> productSubMenuList;
 
     @FindBy(css = "input[name='EMAIL']")
-    private WebElement Home_e_mail_bottom_input;
+    private WebElement HomeEmailBottomInput;
 
     @FindBy(css = "center>input")
-    private WebElement Home_e_mail_bottom_senden;
+    private WebElement HomeEmailBottomSend;
 
     @FindBy(css = "div[class='mc4wp-alert mc4wp-success']>p")
-    private WebElement Home_e_mail_bottom_successMessage;
+    private WebElement HomeEmailBottomSuccessMessage;
 
     @FindBy(className = "mc4wp-response")
-    private WebElement Home_e_mail_bottom_senden_answer;
+    private WebElement HomeEmailBottomSendenAnswer;
 
     @FindBy(css = ".widget_mfn_menu ul li a")
     private List<WebElement> footerMenuList;
@@ -120,76 +120,76 @@ public class Home extends Parent {
         return productSubMenu;
     }
 
-    public WebElement getAbout_Us_Submenu() {
-        return about_Us_Submenu;
+    public WebElement getAboutUsSubmenu() {
+        return aboutUsSubmenu;
     }
 
-    public WebElement getTc_flage() {
-        return tc_flage;
+    public WebElement getTcFlage() {
+        return TcFlage;
     }
 
-    public WebElement getEn_flage() {
-        return en_flage;
+    public WebElement getEnFlage() {
+        return EnFlage;
     }
 
-    public WebElement getDe_flage() {
-        return de_flage;
+    public WebElement getDeFlage() {
+        return DeFlage;
     }
 
-    public WebElement getHome_top_Cart() {
-        return Home_top_Cart;
+    public WebElement getHomeTopCart() {
+        return HomeTopCart;
     }
 
-    public WebElement getHome_Facebook() {
-        return Home_Facebook;
+    public WebElement getHomeFacebook() {
+        return HomeFacebook;
     }
 
-    public WebElement getHome_Instagram() {
-        return Home_Instagram;
+    public WebElement getHomeInstagram() {
+        return HomeInstagram;
     }
 
-    public WebElement getHome_Twitter() {
-        return Home_Twitter;
+    public WebElement getHomeTwitter() {
+        return HomeTwitter;
     }
 
-    public WebElement getHome_Instagram_Bottom_Button() {
-        return Home_Instagram_Bottom_Button;
+    public WebElement getHomeInstagramBottomButton() {
+        return HomeInstagramBottomButton;
     }
 
-    public WebElement getHome_mail_submit_answer() {
-        return Home_mail_submit_answer;
+    public WebElement getHomeMailSubmitAnswer() {
+        return HomeMailSubmitAnswer;
     }
 
-    public WebElement getHome_e_mail_input() {
-        return Home_e_mail_input;
+    public WebElement getHomeEmailInput() {
+        return HomeEmailInput;
     }
 
-    public WebElement getHome_cookise_accept() {
-        return Home_cookise_accept;
+    public WebElement getHomeCookiseAccept() {
+        return HomeCookiseAccept;
     }
 
-    public WebElement getHome_page_Home() {
-        return Home_page_Home;
+    public WebElement getHomePageHome() {
+        return HomePageHome;
     }
 
-    public WebElement getHome_page_Product() {
-        return Home_page_Product;
+    public WebElement getHomePageProduct() {
+        return HomePageProduct;
     }
 
-    public WebElement getHome_page_About_Us() {
-        return Home_page_About_Us;
+    public WebElement getHomePageAboutUs() {
+        return HomePageAboutUs;
     }
 
-    public WebElement getHome_page_Blog() {
-        return Home_page_Blog;
+    public WebElement getHomePageBlog() {
+        return HomePageBlog;
     }
 
-    public WebElement getHome_page_Contact() {
-        return Home_page_Contact;
+    public WebElement getHomePageContact() {
+        return HomePageContact;
     }
 
-    public WebElement getHome_e_mail_submit() {
-        return Home_e_mail_submit;
+    public WebElement getHomeEmailSubmit() {
+        return HomeEmailSubmit;
     }
 
     public WebElement getCloseEMail() {
@@ -216,24 +216,24 @@ public class Home extends Parent {
         return eMailMessage;
     }
 
-    public WebElement getHome_e_mail_bottom_input() {
-        return Home_e_mail_bottom_input;
+    public WebElement getHomeEmailBottomInput() {
+        return HomeEmailBottomInput;
     }
 
-    public WebElement getHome_e_mail_bottom_senden() {
-        return Home_e_mail_bottom_senden;
+    public WebElement getHomeEmailBottomSend() {
+        return HomeEmailBottomSend;
     }
 
-    public WebElement getHome_e_mail_bottom_senden_answer() {
-        return Home_e_mail_bottom_senden_answer;
+    public WebElement getHomeEmailBottomSendenAnswer() {
+        return HomeEmailBottomSendenAnswer;
     }
 
-    public WebElement getHome_e_mail_bottom_successMessage() {
-        return Home_e_mail_bottom_successMessage;
+    public WebElement getHomeEmailBottomSuccessMessage() {
+        return HomeEmailBottomSuccessMessage;
     }
 
-    public WebElement getHome_e_mail_bar_menu_message() {
-        return Home_e_mail_bar_menu_message;
+    public WebElement getHomeEMailBarMenuMessage() {
+        return HomeEMailBarMenuMessage;
     }
 
 }

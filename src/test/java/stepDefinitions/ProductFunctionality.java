@@ -127,7 +127,7 @@ public class ProductFunctionality {
 
     @Then("^The user should be able to see the Produkte page$")
     public void theUserShouldBeAbleToSeeTheProduktePage() {
-        Assert.assertTrue(home.getHome_page_Product().isDisplayed());
+        Assert.assertTrue(home.getHomePageProduct().isDisplayed());
     }
 
     @When("^Click on one of the products randomly which is in the out of stocks$")

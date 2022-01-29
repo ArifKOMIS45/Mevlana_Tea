@@ -13,16 +13,16 @@ public class SocialMediaButtonFunctionality {
     public void clickOnTheButton(String name) {
         switch (name) {
             case "Facebook":
-                hm.getHome_Facebook().click();
+                hm.getHomeFacebook().click();
                 break;
             case "Twitter":
-                hm.getHome_Twitter().click();
+                hm.getHomeTwitter().click();
                 break;
             case "Instagram":
-                hm.getHome_Instagram().click();
+                hm.getHomeInstagram().click();
                 break;
             case "InstagramBottom":
-                hm.getHome_Instagram_Bottom_Button().click();
+                hm.getHomeInstagramBottomButton().click();
                 break;
         }
     }

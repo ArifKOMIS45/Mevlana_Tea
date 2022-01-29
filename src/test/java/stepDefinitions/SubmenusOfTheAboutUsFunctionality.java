@@ -16,12 +16,12 @@ public class SubmenusOfTheAboutUsFunctionality {
 
     @Given("^Hover over the About Us button$")
     public void hover_over_the_About_Us_button() {
-        uberUns.hoverOverRandomlyOnAnElement(hm.getHome_page_About_Us());
+        uberUns.hoverOverRandomlyOnAnElement(hm.getHomePageAboutUs());
     }
 
     @Then("^The user should be able to see the sub menus of the About Us page$")
     public void the_user_should_be_able_to_see_the_sub_menus_of_the_Uber_Uns_page() {
-        boolean submenuEnabled = hm.getAbout_Us_Submenu().isEnabled();
+        boolean submenuEnabled = hm.getAboutUsSubmenu().isEnabled();
         Assert.assertTrue(submenuEnabled);
     }
 
